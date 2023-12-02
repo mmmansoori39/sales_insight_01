@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sales Insights - Data Exploration</title>
+    <link rel="stylesheet" href="../static/styles.css">
+</head>
+<body>
+    <div class="explore-container">
+        <h1>Data Exploration</h1>
+        <label for="product-category">Select a Product Category:</label>
+        <select id="product-category" name="product-category" onchange="exploreData(this.value)">
+            <option value="Product A">Product A</option>
+            <option value="Product B">Product B</option>
+            <option value="Product C">Product C</option>
+        </select>
+        <div id="exploration-results"></div>
+    </div>
+
+    <script>
+        function exploreData(selectedCategory) {
+            // Example: Get data based on selected category
+            var results = getResultsForCategory(selectedCategory);
+
+            // Display results
+            var resultsDiv = document.getElementById('exploration-results');
+            resultsDiv.innerHTML = results;
+        }
+
+        function getResultsForCategory(category) {
+            // Example: Return data for selected category
+            if (category === 'Product A') {
+                return '<p>Product A Data</p>';
+            } else if (category === 'Product B') {
+                return '<p>Product B Data</p>';
+            } else if (category === 'Product C') {
+                return '<p>Product C Data</p>';
+            }
+        }
+    </script>
+</body>
+</html>
